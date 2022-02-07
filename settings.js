@@ -4,5 +4,8 @@ chrome.storage.sync.get(["authors"], ({ authors }) => {
     authors || ""
   );
 
-  chrome.storage.sync.set({ authors: newAuthors });
+  if (newAuthors != null) {
+    chrome.storage.sync.set({ authors: newAuthors });
+    location.reload();
+  }
 });
