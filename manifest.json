@@ -8,11 +8,15 @@
     "128": "128.png"
   },
   "action":{
-    "default_popup": "index.html",
     "default_title": "BikePost Ignore"
   },
   "content_scripts": [{
     "js": ["jquery.js", "content.js"],
-    "matches": ["https://bikepost.ru/*"]
-  }]
+    "matches": ["https://bikepost.ru/*"],
+    "run_at": "document_end"
+  }],
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
