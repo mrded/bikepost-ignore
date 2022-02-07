@@ -12,7 +12,7 @@
     "default_title": "BikePost Ignore"
   },
   "content_scripts": [{
-    "js": ["jquery.js", "background.js"],
+    "js": ["jquery.js", "content.js"],
     "matches": ["https://bikepost.ru/*"]
   }]
 }
