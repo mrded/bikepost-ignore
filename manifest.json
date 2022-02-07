@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "BikePost Ignore",
+  "description": "Вы можете добавить в список людей, чье присутствие на сайте вы хотели бы не замечать никогда.",
+  "author": "Dmitry Demenchuk (@mrded)",
+  "version": "0.1",
+  "icons": {
+    "128": "128.png"
+  },
+  "action":{
+    "default_popup": "index.html",
+    "default_title": "BikePost Ignore"
+  },
+  "content_scripts": [{
+    "js": ["background.js"],
+    "matches": ["https://bikepost.ru/*"]
+  }]
+}
