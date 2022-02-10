@@ -1,4 +1,4 @@
-chrome.storage.sync.get(["authors"], ({ authors }) => {
+browser.storage.local.get(["authors"], ({ authors }) => {
   const authorsList = authors.split(",").map((x) => x.trim());
 
   hideComments(authorsList);
