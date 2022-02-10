@@ -1,3 +1,8 @@
+if (typeof browser === "undefined") {
+  // Cross browser support.
+  var browser = chrome;
+}
+
 browser.storage.local.get(["authors"], ({ authors }) => {
   const authorsList = authors.split(",").map((x) => x.trim());
 
