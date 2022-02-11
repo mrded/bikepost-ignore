@@ -8,7 +8,7 @@ if (typeof browser === "undefined") {
 
 document.addEventListener("DOMContentLoaded", () => {
   browser.storage.local.get(["authors"], (result) => {
-    inputAuthors.value = result.authors;
+    inputAuthors.value = result.authors || "";
   });
 });
 
