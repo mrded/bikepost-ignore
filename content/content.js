@@ -3,8 +3,10 @@ if (typeof browser === "undefined") {
   var browser = chrome;
 }
 
-browser.storage.local.get(["authors"], (result) => {
-  const authorsList = (result.authors || "").split(",").map((x) => x.trim());
+browser.storage.local.get(["authors", "enabled"], result => {
+  if (!result.enabled) return;
+
+  const authorsList = (result.authors || "").split(",").map(x => x.trim());
 
   hideComments(authorsList);
 });
