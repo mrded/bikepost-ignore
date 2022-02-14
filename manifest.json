@@ -3,7 +3,7 @@
   "name": "BikePost Ignore",
   "description": "Вы можете добавить в список людей, чье присутствие на сайте вы хотели бы не замечать никогда.",
   "author": "Dmitry Demenchuk (@mrded)",
-  "version": "0.2",
+  "version": "0.3",
   "icons": {
     "128": "icons/128.png"
   },
