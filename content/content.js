@@ -8,15 +8,31 @@ browser.storage.local.get(["authors", "enabled"], result => {
 
   const authorsList = (result.authors || "").split(",").map(x => x.trim());
 
-  hideComments(authorsList);
+  hideUsers(authorsList);
 });
 
-const hideComments = (authors = []) => {
+const hideUsers = (authors = []) => {
   for (const author of authors) {
-    $(`a.author[href="https://bikepost.ru/profile/${author}/"]`)
+    // Comments
+    $(`.comment-wrapper a.author[href="https://bikepost.ru/profile/${author}/"]`)
       .closest(".comment-wrapper")
       .css("display", "none");
     // .css("background-color", "red");
+
+    // Topics
+    $(`.topic .username a[href="https://bikepost.ru/profile/${author}/"]`)
+      .closest(".topic")
+      .css("display", "none");
+
+    // Comment feed
+    $(`#block_stream_content a.user[href="https://bikepost.ru/profile/${author}/"]`)
+      .closest("#block_stream_content li")
+      .css("display", "none");
+
+    // Private messages
+    $(`.talk-table a.user[href="https://bikepost.ru/profile/${author}/"]`)
+      .closest(".talk-table tr")
+      .css("display", "none");
   }
 };
 
